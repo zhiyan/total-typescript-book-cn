@@ -358,7 +358,7 @@ namespace RecordStoreUtils {
     export function recordSale(
       albumTitle: string,
       quantity: number,
-      price: number,
+      price: number
     ) {
       // Implementation to record an album sale
     }
@@ -433,7 +433,7 @@ namespace RecordStoreUtils {
     export function recordSale(
       albumTitle: string,
       quantity: number,
-      price: number,
+      price: number
     ) {
       // Implementation to record an album sale
     }

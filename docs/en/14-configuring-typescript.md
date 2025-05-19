@@ -487,7 +487,7 @@ Imagine we have our `album.ts` file that exports a `createAlbum` function:
 export function createAlbum(
   title: string,
   artist: string,
-  year: number,
+  year: number
 ): Album {
   return { title, artist, year };
 }
@@ -688,7 +688,7 @@ export interface Album {
 export function createAlbum(
   title: string,
   artist: string,
-  year: number,
+  year: number
 ): Album {
   return { title, artist, year };
 }
@@ -710,7 +710,7 @@ export interface Album {
 export declare function createAlbum(
   title: string,
   artist: string,
-  year: number,
+  year: number
 ): Album;
 ```
 

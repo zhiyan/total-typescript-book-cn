@@ -1,12 +1,12 @@
-根据我目前告诉你的内容，你可能认为TypeScript只是"带类型的JavaScript"。JavaScript处理运行时代码，而TypeScript用类型描述它。
+根据我目前告诉你的内容，你可能认为 TypeScript 只是"带类型的 JavaScript"。JavaScript 处理运行时代码，而 TypeScript 用类型描述它。
 
-但TypeScript实际上有一些在JavaScript中不存在的运行时特性。这些特性被编译成JavaScript，但它们不是JavaScript语言本身的一部分。
+但 TypeScript 实际上有一些在 JavaScript 中不存在的运行时特性。这些特性被编译成 JavaScript，但它们不是 JavaScript 语言本身的一部分。
 
-在本章中，我们将看几个这些TypeScript独有的特性，包括参数属性、枚举和命名空间。在此过程中，我们将讨论优缺点，以及何时你可能想坚持使用JavaScript。
+在本章中，我们将看几个这些 TypeScript 独有的特性，包括参数属性、枚举和命名空间。在此过程中，我们将讨论优缺点，以及何时你可能想坚持使用 JavaScript。
 
 ## 类参数属性
 
-一个在JavaScript中不存在的TypeScript特性是类参数属性。这些允许你直接从构造函数参数声明和初始化类成员。
+一个在 JavaScript 中不存在的 TypeScript 特性是类参数属性。这些允许你直接从构造函数参数声明和初始化类成员。
 
 考虑这个`Rating`类：
 
@@ -16,7 +16,7 @@ class Rating {
 }
 ```
 
-构造函数在`value`参数前包含`public`，在`max`参数前包含`private`。在JavaScript中，这会编译成将参数分配给类上属性的代码：
+构造函数在`value`参数前包含`public`，在`max`参数前包含`private`。在 JavaScript 中，这会编译成将参数分配给类上属性的代码：
 
 ```typescript
 class Rating {
@@ -29,19 +29,19 @@ class Rating {
 
 与手动处理赋值相比，这节省了大量代码并保持类定义简洁。
 
-但与其他TypeScript特性不同，输出的JavaScript不是TypeScript代码的直接表示。如果你不熟悉这个特性，这可能使理解发生的事情变得困难。
+但与其他 TypeScript 特性不同，输出的 JavaScript 不是 TypeScript 代码的直接表示。如果你不熟悉这个特性，这可能使理解发生的事情变得困难。
 
 ## 枚举
 
 你可以使用`enum`关键字定义一组命名常量。这些可以用作类型或值。
 
-枚举在TypeScript的第一个版本中就被添加了，但它们还没有被添加到JavaScript中。这意味着它是一个TypeScript独有的运行时特性。而且，正如我们将看到的，它带有一些奇怪的行为。
+枚举在 TypeScript 的第一个版本中就被添加了，但它们还没有被添加到 JavaScript 中。这意味着它是一个 TypeScript 独有的运行时特性。而且，正如我们将看到的，它带有一些奇怪的行为。
 
 枚举的一个好用例是当有一组有限的相关值，预计不会改变时。
 
 ### 数字枚举
 
-数字枚举将一组相关成员组合在一起，并自动从0开始为它们分配数字值。例如，考虑这个`AlbumStatus`枚举：
+数字枚举将一组相关成员组合在一起，并自动从 0 开始为它们分配数字值。例如，考虑这个`AlbumStatus`枚举：
 
 ```typescript
 enum AlbumStatus {
@@ -51,7 +51,7 @@ enum AlbumStatus {
 }
 ```
 
-在这种情况下，`AlbumStatus.NewRelease`将是0，`AlbumStatus.OnSale`将是1，依此类推。
+在这种情况下，`AlbumStatus.NewRelease`将是 0，`AlbumStatus.OnSale`将是 1，依此类推。
 
 要将`AlbumStatus`用作类型，我们可以使用它的名称：
 
@@ -69,7 +69,7 @@ logStatus(AlbumStatus.NewRelease);
 
 #### 带有显式值的数字枚举
 
-你也可以为枚举的每个成员分配特定值。例如，如果你想为`NewRelease`分配值1，为`OnSale`分配2，为`StaffPick`分配3，你可以这样做：
+你也可以为枚举的每个成员分配特定值。例如，如果你想为`NewRelease`分配值 1，为`OnSale`分配 2，为`StaffPick`分配 3，你可以这样做：
 
 ```typescript
 enum AlbumStatus {
@@ -79,11 +79,11 @@ enum AlbumStatus {
 }
 ```
 
-现在，`AlbumStatus.NewRelease`将是1，`AlbumStatus.OnSale`将是2，依此类推。
+现在，`AlbumStatus.NewRelease`将是 1，`AlbumStatus.OnSale`将是 2，依此类推。
 
 #### 自动递增的数字枚举
 
-如果你选择只为枚举分配_一些_数字值，TypeScript将自动从最后分配的值递增其余的值。例如，如果你只为`NewRelease`分配一个值，`OnSale`和`StaffPick`将分别是2和3。
+如果你选择只为枚举分配*一些*数字值，TypeScript 将自动从最后分配的值递增其余的值。例如，如果你只为`NewRelease`分配一个值，`OnSale`和`StaffPick`将分别是 2 和 3。
 
 ```typescript
 enum AlbumStatus {
@@ -117,11 +117,11 @@ logStatus(AlbumStatus.NewRelease);
 
 ### 枚举很奇怪
 
-在JavaScript中没有与`enum`关键字等效的语法。所以，TypeScript可以制定枚举如何工作的规则。这意味着它们有一些略微奇怪的行为。
+在 JavaScript 中没有与`enum`关键字等效的语法。所以，TypeScript 可以制定枚举如何工作的规则。这意味着它们有一些略微奇怪的行为。
 
 #### 数字枚举如何转译
 
-枚举转换成JavaScript代码的方式可能感觉有点意外。
+枚举转换成 JavaScript 代码的方式可能感觉有点意外。
 
 例如，枚举`AlbumStatus`：
 
@@ -133,7 +133,7 @@ enum AlbumStatus {
 }
 ```
 
-将被转译成以下JavaScript：
+将被转译成以下 JavaScript：
 
 ```javascript
 var AlbumStatus;
@@ -144,7 +144,7 @@ var AlbumStatus;
 })(AlbumStatus || (AlbumStatus = {}));
 ```
 
-这段相当不透明的JavaScript一次性做了几件事。它创建了一个对象，为每个枚举值设置属性，它还创建了值到键的反向映射。
+这段相当不透明的 JavaScript 一次性做了几件事。它创建了一个对象，为每个枚举值设置属性，它还创建了值到键的反向映射。
 
 结果将类似于以下内容：
 
@@ -169,7 +169,7 @@ console.log(Object.keys(AlbumStatus)); // ["0", "1", "2", "NewRelease", "OnSale"
 
 #### 字符串枚举如何转译
 
-字符串枚举的行为与数字枚举不同。当你指定字符串值时，转译的JavaScript要简单得多：
+字符串枚举的行为与数字枚举不同。当你指定字符串值时，转译的 JavaScript 要简单得多：
 
 ```typescript
 enum AlbumStatus {
@@ -226,7 +226,7 @@ logStatus(AlbumStatus.NewRelease);
 logStatus(0);
 ```
 
-如果我们用不是枚举成员的数字调用它，TypeScript将报告错误：
+如果我们用不是枚举成员的数字调用它，TypeScript 将报告错误：
 
 ```ts twoslash
 // @errors: 2345
@@ -262,11 +262,11 @@ logStatus(AlbumStatus.NewRelease);
 logStatus("NEW_RELEASE");
 ```
 
-字符串枚举的行为感觉更自然 - 它与C#和Java等其他语言中枚举的工作方式相匹配。
+字符串枚举的行为感觉更自然 - 它与 C#和 Java 等其他语言中枚举的工作方式相匹配。
 
 但它们与数字枚举不一致的事实可能是混淆的来源。
 
-事实上，字符串枚举在TypeScript中是独特的，因为它们是_名义上_比较的。TypeScript中的所有其他类型都是_结构上_比较的，这意味着如果两个类型具有相同的结构，它们被认为是相同的。但字符串枚举是基于它们的名称（名义上）比较的，而不是它们的结构。
+事实上，字符串枚举在 TypeScript 中是独特的，因为它们是*名义上*比较的。TypeScript 中的所有其他类型都是*结构上*比较的，这意味着如果两个类型具有相同的结构，它们被认为是相同的。但字符串枚举是基于它们的名称（名义上）比较的，而不是它们的结构。
 
 这意味着如果两个字符串枚举具有相同的成员，但名称不同，它们被认为是不同的类型：
 
@@ -307,9 +307,9 @@ const enum AlbumStatus {
 
 你可以使用`const`枚举声明数字或字符串枚举 - 它们与常规枚举具有相同的行为。
 
-主要区别是`const`枚举在TypeScript转译为JavaScript时会消失。不是创建一个带有枚举值的对象，转译的JavaScript将直接使用枚举的值。
+主要区别是`const`枚举在 TypeScript 转译为 JavaScript 时会消失。不是创建一个带有枚举值的对象，转译的 JavaScript 将直接使用枚举的值。
 
-例如，如果创建一个访问枚举值的数组，转译的JavaScript将最终包含这些值：
+例如，如果创建一个访问枚举值的数组，转译的 JavaScript 将最终包含这些值：
 
 ```typescript
 let albumStatuses = [
@@ -322,7 +322,7 @@ let albumStatuses = [
 let albumStatuses = ["NEW_RELEASE", "ON_SALE", "STAFF_PICK"];
 ```
 
-`const`枚举确实有一些限制，特别是在声明文件中声明时（我们稍后会介绍）。TypeScript团队实际上建议在你的库代码中避免使用`const`枚举，因为它们对你的库的消费者可能表现得不可预测。
+`const`枚举确实有一些限制，特别是在声明文件中声明时（我们稍后会介绍）。TypeScript 团队实际上建议在你的库代码中避免使用`const`枚举，因为它们对你的库的消费者可能表现得不可预测。
 
 ### 你应该使用枚举吗？
 
@@ -330,15 +330,15 @@ let albumStatuses = ["NEW_RELEASE", "ON_SALE", "STAFF_PICK"];
 
 有一些枚举的替代方案你可能想考虑，比如普通的联合类型。但我更喜欢的替代方案使用了我们还没有介绍的一些语法。
 
-我们将在第10章的`as const`部分讨论你是否应该一般使用枚举。
+我们将在第 10 章的`as const`部分讨论你是否应该一般使用枚举。
 
 ## 命名空间
 
-命名空间是TypeScript的早期特性，试图解决当时JavaScript的一个大问题 - 缺乏模块系统。它们是在ES6模块标准化之前引入的，它们是TypeScript组织代码的尝试。
+命名空间是 TypeScript 的早期特性，试图解决当时 JavaScript 的一个大问题 - 缺乏模块系统。它们是在 ES6 模块标准化之前引入的，它们是 TypeScript 组织代码的尝试。
 
 命名空间让你指定可以导出函数和类型的闭包。这允许你使用不会与全局作用域中声明的其他东西冲突的名称。
 
-考虑一个场景，我们正在构建一个TypeScript应用程序来管理音乐收藏。可能有函数来添加专辑、计算销售额和生成报告。使用命名空间，我们可以逻辑地分组这些函数：
+考虑一个场景，我们正在构建一个 TypeScript 应用程序来管理音乐收藏。可能有函数来添加专辑、计算销售额和生成报告。使用命名空间，我们可以逻辑地分组这些函数：
 
 ```typescript
 namespace RecordStoreUtils {
@@ -358,7 +358,7 @@ namespace RecordStoreUtils {
     export function recordSale(
       albumTitle: string,
       quantity: number,
-      price: number,
+      price: number
     ) {
       // 记录专辑销售的实现
     }
@@ -387,7 +387,7 @@ AlbumCollection.Sales.recordSale("Odelay!", 1, 10.99);
 
 ### 命名空间如何编译
 
-命名空间编译成相对简单的JavaScript。例如，`RecordStoreUtils`命名空间的一个更简单版本...
+命名空间编译成相对简单的 JavaScript。例如，`RecordStoreUtils`命名空间的一个更简单版本...
 
 ```typescript
 namespace RecordStoreUtils {
@@ -397,7 +397,7 @@ namespace RecordStoreUtils {
 }
 ```
 
-...将被转译成以下JavaScript：
+...将被转译成以下 JavaScript：
 
 ```javascript
 var RecordStoreUtils;
@@ -433,7 +433,7 @@ namespace RecordStoreUtils {
     export function recordSale(
       albumTitle: string,
       quantity: number,
-      price: number,
+      price: number
     ) {
       // 记录专辑销售的实现
     }
@@ -460,7 +460,7 @@ RecordStoreUtils.Sales.calculateTotalSales("Loaded");
 
 #### 合并命名空间内的接口
 
-命名空间内的接口也可以合并。如果我们有两个不同的`RecordStoreUtils`，每个都有自己的`Album`接口，TypeScript会自动将它们合并成一个包含所有属性的单一`Album`接口：
+命名空间内的接口也可以合并。如果我们有两个不同的`RecordStoreUtils`，每个都有自己的`Album`接口，TypeScript 会自动将它们合并成一个包含所有属性的单一`Album`接口：
 
 ```typescript
 namespace RecordStoreUtils {
@@ -491,10 +491,28 @@ const madvillainy: RecordStoreUtils.Album = {
 
 ### 你应该使用命名空间吗？
 
-想象一下，如果ES模块，带有`import`和`export`，从未存在。在这个世界中，你声明的所有东西都在全局作用域中。你必须小心命名事物，并且必须想出一种组织代码的方法。
+想象一下，如果 ES 模块，带有`import`和`export`，从未存在。在这个世界中，你声明的所有东西都在全局作用域中。你必须小心命名事物，并且必须想出一种组织代码的方法。
 
-这就是TypeScript诞生的世界。像CommonJS（`require`）和ES模块（`import`，`export`）这样的模块系统还不流行。所以，命名空间是避免命名冲突和组织代码的关键方式。
+这就是 TypeScript 诞生的世界。像 CommonJS（`require`）和 ES 模块（`import`，`export`）这样的模块系统还不流行。所以，命名空间是避免命名冲突和组织代码的关键方式。
 
-但现在ES模块被广泛支持，你应该使用它们而不是命名空间。命名空间在现代TypeScript代码中几乎没有相关性，除了一些例外，我们将在全局作用域章节中探讨。
+但现在 ES 模块被广泛支持，你应该使用它们而不是命名空间。命名空间在现代 TypeScript 代码中几乎没有相关性，除了一些例外，我们将在全局作用域章节中探讨。
 
-## 何时偏好ES vs. TS
+## 何时偏好 ES vs. TS
+
+在本章中，我们研究了几个 TypeScript 独有的特性。这些特性有两个共同点。首先，它们在 JavaScript 中不存在。其次，它们很*旧*。
+
+在 2010 年 TypeScript 刚开始构建时，JavaScript 被认为是一门有问题的语言，需要修复。枚举、命名空间和类参数属性就是在这样一种氛围下添加的，当时人们认为向 JavaScript 添加新的运行时特性是件好事。
+
+但现在，JavaScript 本身已经健康得多。TC39 委员会是决定向 JavaScript 添加哪些特性的机构，它更加活跃和高效。每年都有新特性被添加到该语言中，并且该语言正在迅速发展。
+
+TypeScript 团队本身现在对自己的角色有了截然不同的看法。他们不再向 TypeScript 添加新特性，而是尽可能地紧跟 JavaScript。TypeScript 的项目经理 Daniel Rosenwasser 是 TC39 委员会的联席主席。
+
+如今思考 TypeScript 的正确方式是将其视为"带类型的 JavaScript"。
+
+鉴于这种态度，我们应该如何对待这些 TypeScript 独有的特性就很清楚了：将它们视为过去的遗物。如果枚举、命名空间和类参数属性是今天提出的，它们甚至都不会被考虑。
+
+但问题依然存在：你应该使用它们吗？TypeScript 很可能永远不会停止支持这些特性。这样做会破坏太多现有的代码。所以，它们可以安全地继续使用。
+
+但我更喜欢以我正在使用的语言的精神来编写代码。编写"带类型的 JavaScript"可以使 TypeScript 和 JavaScript 之间的关系清晰明了。
+
+然而，这只是我个人的偏好。如果你正在开发一个已经使用这些特性的大型代码库，那么移除它们是*不值得*的。团队达成一致并保持一致性才是关键。

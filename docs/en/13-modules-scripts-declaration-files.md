@@ -479,7 +479,7 @@ interface Array<T> {
   // ... other methods ...
   map<U>(
     callbackfn: (value: T, index: number, array: T[]) => U,
-    thisArg?: any,
+    thisArg?: any
   ): U[];
 }
 ```
@@ -826,7 +826,7 @@ Your task is to specify that `DEBUG` is available in this module (and this modul
 Let's imagine now that we want our `DEBUG` object to only be accessible through the `window` object:
 
 ```ts twoslash
-// @errors: 2339
+// @errors: 2551
 import { Equal, Expect } from "@total-typescript/helpers";
 // ---cut---
 // inside index.ts

@@ -372,7 +372,7 @@ If we hover over `isAlbum`, we can see a rather ugly type signature:
 ```typescript
 // hovering over isAlbum shows:
 function isAlbum(
-  input: unknown,
+  input: unknown
 ): input is object &
   Record<"id", unknown> &
   Record<"title", unknown> &
@@ -385,7 +385,7 @@ This is technically correct: a big intersection between an `object` and a bunch 
 When we try to use `isAlbum` to narrow the type of a value, TypeScript won't infer it correctly:
 
 ```ts twoslash
-// @errors: 18046
+// @errors: 2339
 function isAlbum(input: unknown) {
   return (
     typeof input === "object" &&
@@ -604,7 +604,7 @@ function searchMusic(criteria: {
 function searchMusic(
   artistOrCriteria: string | { artist: string; genre: string; year: number },
   genre?: string,
-  year?: number,
+  year?: number
 ): void {
   if (typeof artistOrCriteria === "string") {
     // Search with separate arguments
@@ -614,7 +614,7 @@ function searchMusic(
     search(
       artistOrCriteria.artist,
       artistOrCriteria.genre,
-      artistOrCriteria.year,
+      artistOrCriteria.year
     );
   }
 }
@@ -644,7 +644,7 @@ function searchMusic(criteria: {
 function searchMusic(
   artistOrCriteria: string | { artist: string; genre: string; year: number },
   genre?: string,
-  year?: number,
+  year?: number
 ): void {}
 // ---cut---
 searchMusic(
@@ -653,7 +653,7 @@ searchMusic(
     genre: "Psychedelic Rock",
     year: 2015,
   },
-  "Psychedelic Rock",
+  "Psychedelic Rock"
 );
 ```
 
@@ -667,7 +667,7 @@ When you have the same number of arguments but different types, you should use a
 
 ```typescript
 function searchMusic(
-  query: string | { artist: string; genre: string; year: number },
+  query: string | { artist: string; genre: string; year: number }
 ): void {
   if (typeof query === "string") {
     // Search by artist
@@ -723,7 +723,7 @@ objMap.set("foo", { a: 123 });
 objMap.set(
   "bar",
   // @ts-expect-error
-  { b: 123 },
+  { b: 123 }
 );
 ```
 
@@ -1247,7 +1247,7 @@ In the above code, `numberMap` will result in a `Map` with `string` keys and `nu
 numberMap.set(
   "bar",
   // @ts-expect-error
-  true,
+  true
 );
 ```
 
@@ -1349,7 +1349,7 @@ We need to use the `extends` keyword to add constraints to the generic type para
 const UNKNOWN_CODE = 8000;
 
 const addCodeToError = <TError extends { message: string; code?: number }>(
-  error: TError,
+  error: TError
 ) => {
   return {
     ...error,

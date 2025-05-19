@@ -599,7 +599,7 @@ const findUsersByName = (
   users: {
     id: string;
     name: string;
-  }[],
+  }[]
 ) => {
   if (searchParams.name) {
     return users.filter((user) => user.name.includes(searchParams.name));
@@ -722,7 +722,7 @@ type tests = [
         link: string;
       }[]
     >
-  >,
+  >
 ];
 ```
 
@@ -785,7 +785,7 @@ const routes = {
 // ---cut---
 type tests = [
   Expect<Equal<(typeof routes)["/"]["component"], "Home">>,
-  Expect<Equal<(typeof routes)["/about"]["component"], "About">>,
+  Expect<Equal<(typeof routes)["/about"]["component"], "About">>
 ];
 ```
 
@@ -885,7 +885,7 @@ const findUsersByName = (
   users: {
     id: string;
     name: string;
-  }[],
+  }[]
 ) => {
   if (searchParams.name) {
     return users.filter((user) => user.name.includes(searchParams.name));
@@ -904,11 +904,11 @@ const findUsersByName = (
   users: {
     id: string;
     name: string;
-  }[],
+  }[]
 ) => {
   if (searchParams.name) {
     return users.filter((user) =>
-      user.name.includes(searchParams.name as string),
+      user.name.includes(searchParams.name as string)
     );
   }
   return users;
@@ -927,7 +927,7 @@ const findUsersByName = (
   users: {
     id: string;
     name: string;
-  }[],
+  }[]
 ) => {
   if (searchParams.name) {
     return users.filter((user) => user.name.includes(searchParams.name!));

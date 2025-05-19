@@ -28,8 +28,6 @@ In this book, you'll learn why it has become so popular, and how it can help you
 
 With a JavaScript-only project, you would typically write your code in files with a `.js` file extension. These files are then able to be directly executed in the browser or a runtime environment like Node.js (which is used to run JavaScript on servers, or on your laptop). The JavaScript you write is the JavaScript that gets executed.
 
-![](images/image5.png)
-
 If you're testing whether your code works, you need to test it inside the runtime - the browser or Node.js.
 
 For a TypeScript project, your code is primarily inside of `.ts` files.
@@ -39,8 +37,6 @@ Inside your IDE, these files are monitored by TypeScript's 'language server'. Th
 Unlike a `.js` file, `.ts` files can't usually be executed directly by the browser or a runtime. Instead, they require an initial build process.
 
 This is where TypeScript's `tsc` CLI comes in, which transforms your `.ts` files into `.js` files. You are able to take advantage of TypeScript's features while writing your code, but the output is still plain JavaScript.
-
-![](images/image4.png)
 
 The great benefit of this system is that you get in a feedback loop with TypeScript. You write code. The in-IDE server gives you feedback. You adjust based on the feedback. And all of this happens before your code goes into the browser. This loop is much faster than JavaScript's, so can help you create higher-quality code faster.
 

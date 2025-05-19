@@ -28,8 +28,6 @@ C# 的创造者 Anders Hejlsberg 受命调查这一现象。他感到非常惊�
 
 对于一个纯 JavaScript 项目，你通常会将代码写在扩展名为 `.js` 的文件中。这些文件可以直接在浏览器或像 Node.js 这样的运行时环境（用于在服务器或你的笔记本电脑上运行 JavaScript）中执行。你编写的 JavaScript 就是最终执行的 JavaScript。
 
-![](images/image5.png)
-
 如果你要测试代码是否有效，你需要在运行时——浏览器或 Node.js——中进行测试。
 
 对于一个 TypeScript 项目，你的代码主要放在 `.ts` 文件中。
@@ -39,8 +37,6 @@ C# 的创造者 Anders Hejlsberg 受命调查这一现象。他感到非常惊�
 与 `.js` 文件不同，`.ts` 文件通常不能直接由浏览器或运行时执行。相反，它们需要一个初始的构建过程。
 
 这就是 TypeScript 的 `tsc` CLI 发挥作用的地方，它将你的 `.ts` 文件转换为 `.js` 文件。你可以在编写代码时利用 TypeScript 的特性，但最终输出的仍然是纯 JavaScript。
-
-![](images/image4.png)
 
 这个系统的巨大好处在于你与 TypeScript 形成了一个反馈循环。你编写代码，IDE 内的服务器给你反馈，你根据反馈进行调整。所有这一切都发生在你的代码进入浏览器之前。这个循环比 JavaScript 的快得多，因此可以帮助你更快地创建更高质量的代码。
 

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@total-typescript/helpers": "^0.0.1",
-    "vitest": "^3.1.3"
+    "vitest": "^3.1.3",
+    "zod": "^3.24.4"
   }
 }

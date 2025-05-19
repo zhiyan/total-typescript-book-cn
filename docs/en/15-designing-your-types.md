@@ -926,7 +926,7 @@ type tests = [
   Expect<Equal<StrictOmit<{ a: string; b: number }, "b" | "a">, {}>>,
   Expect<
     Equal<StrictOmit<{ a: string; b: number }, never>, { a: string; b: number }>
-  >,
+  >
 ];
 ```
 
@@ -966,7 +966,7 @@ const goToRoute = (route: AbsoluteRoute) => {
 // ---cut---
 goToRoute(
   // @ts-expect-error
-  "somewhere",
+  "somewhere"
 );
 ```
 
@@ -1007,7 +1007,7 @@ type tests = [
       | "white sandwich with ham"
       | "white sandwich with salami"
     >
-  >,
+  >
 ];
 ```
 
@@ -1057,7 +1057,7 @@ type tests = [
         age: () => number;
       }
     >
-  >,
+  >
 ];
 ```
 
@@ -1082,7 +1082,7 @@ type tests = [
         getAge: () => number;
       }
     >
-  >,
+  >
 ];
 ```
 
@@ -1266,7 +1266,7 @@ type tests = [
   Expect<Equal<StrictOmit<{ a: string; b: number }, "b" | "a">, {}>>,
   Expect<
     Equal<StrictOmit<{ a: string; b: number }, never>, { a: string; b: number }>
-  >,
+  >
 ];
 ```
 
@@ -1295,7 +1295,7 @@ With this change, the `somewhere` string will cause an error since it does not b
 ```tsx
 goToRoute(
   // @ts-expect-error
-  "somewhere",
+  "somewhere"
 );
 ```
 
@@ -1364,7 +1364,7 @@ type tests = [
         age: () => number;
       }
     >
-  >,
+  >
 ];
 ```
 

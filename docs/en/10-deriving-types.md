@@ -1026,7 +1026,7 @@ const makeQuery = (
       [key: string]: string;
     };
     body?: string;
-  },
+  }
 ) => {};
 ```
 
@@ -1043,7 +1043,7 @@ type MakeQueryParameters = [
       [key: string]: string;
     };
     body?: string;
-  }?,
+  }?
 ];
 ```
 
@@ -1143,7 +1143,7 @@ const makeQuery = (
       [key: string]: string;
     };
     body?: string;
-  },
+  }
 ) => {};
 // ---cut---
 type MakeQueryParameters = Parameters<makeQuery>;
@@ -1160,7 +1160,7 @@ const makeQuery = (
       [key: string]: string;
     };
     body?: string;
-  },
+  }
 ) => {};
 // ---cut---
 type MakeQueryParameters = Parameters<typeof makeQuery>;

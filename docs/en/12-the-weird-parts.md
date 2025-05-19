@@ -197,7 +197,7 @@ const newAlbums = remapAlbums(
     ...album,
     releaseYear: album.releaseYear + 1,
     strangeProperty: "This is strange",
-  }),
+  })
 );
 ```
 
@@ -753,7 +753,7 @@ It should also handle a callback with a `filename` and `volume`:
 
 ```tsx
 handlePlayer((filename: string, volume: number) =>
-  console.log(`Playing ${filename} at volume ${volume}`),
+  console.log(`Playing ${filename} at volume ${volume}`)
 );
 ```
 
@@ -794,7 +794,7 @@ const handlePlayer = (callback: CallbackType) => {
 handlePlayer((filename) => console.log(`Playing ${filename}`));
 
 handlePlayer((filename, volume) =>
-  console.log(`Playing ${filename} at volume ${volume}`),
+  console.log(`Playing ${filename} at volume ${volume}`)
 );
 
 handlePlayer((filename, volume, bassBoost) => {
@@ -810,7 +810,7 @@ You can actually remove the first two members of the union and only include the 
 type CallbackType = (
   filename: string,
   volume: number,
-  bassBoost: boolean,
+  bassBoost: boolean
 ) => void;
 ```
 
@@ -820,7 +820,7 @@ Once this change has been made, the implicit `any` errors with the other two cal
 handlePlayer((filename) => console.log(`Playing ${filename}`)); // No error
 
 handlePlayer((filename, volume) =>
-  console.log(`Playing ${filename} at volume ${volume}`),
+  console.log(`Playing ${filename} at volume ${volume}`)
 ); // No error
 ```
 
@@ -835,7 +835,7 @@ If the callback accepts more arguments than are passed, TypeScript would show an
 type CallbackType = (
   filename: string,
   volume: number,
-  bassBoost: boolean,
+  bassBoost: boolean
 ) => void;
 
 const handlePlayer = (callback: CallbackType) => {
@@ -854,7 +854,7 @@ But again, implementing fewer parameters than expected is fine. To further illus
 
 ```tsx
 ["macarena.mp3", "scatman.wma", "cotton-eye-joe.ogg"].map((file) =>
-  file.toUpperCase(),
+  file.toUpperCase()
 );
 ```
 
@@ -916,7 +916,7 @@ const formatterFunctions = {
 // ---cut---
 const getAlbumInfo = (
   album: { title: string } | { artist: string } | { releaseYear: number },
-  key: keyof typeof formatterFunctions,
+  key: keyof typeof formatterFunctions
 ) => {
   const functionToCall = formatterFunctions[key];
 
@@ -933,7 +933,7 @@ So, we can provide a type that is an intersection of the three different types o
 ```tsx
 const getAlbumInfo = (
   album: { title: string } & { artist: string } & { releaseYear: number },
-  key: keyof typeof formatterFunctions,
+  key: keyof typeof formatterFunctions
 ) => {
   const functionToCall = formatterFunctions[key];
 
@@ -946,7 +946,7 @@ Which can itself be simplified to a single object type:
 ```tsx
 const getAlbumInfo = (
   album: { title: string; artist: string; releaseYear: number },
-  key: keyof typeof formatterFunctions,
+  key: keyof typeof formatterFunctions
 ) => {
   const functionToCall = formatterFunctions[key];
 
@@ -963,7 +963,7 @@ const formatted = getAlbumInfo(
     artist: "John Martyn",
     releaseYear: 1973,
   },
-  "title",
+  "title"
 );
 ```
 
@@ -1004,11 +1004,11 @@ const acceptAnythingExceptNullOrUndefined = (input: any) => {};
 // ---cut---
 acceptAnythingExceptNullOrUndefined(
   // @ts-expect-error
-  null,
+  null
 );
 acceptAnythingExceptNullOrUndefined(
   // @ts-expect-error
-  undefined,
+  undefined
 );
 ```
 
@@ -1203,7 +1203,7 @@ listenToEvent((event, x, y) => {
   type tests = [
     Expect<Equal<typeof event, Event>>,
     Expect<Equal<typeof x, number>>,
-    Expect<Equal<typeof y, number>>,
+    Expect<Equal<typeof y, number>>
   ];
 });
 ```
@@ -1226,7 +1226,7 @@ listenToEvent((event, x, y, screenId) => {
     Expect<Equal<typeof event, Event>>,
     Expect<Equal<typeof x, number>>,
     Expect<Equal<typeof y, number>>,
-    Expect<Equal<typeof screenId, number>>,
+    Expect<Equal<typeof screenId, number>>
   ];
 });
 ```
@@ -1430,7 +1430,7 @@ const usersWithIds: User[] = users.map(
     id: index,
     // @ts-expect-error
     age: 30,
-  }),
+  })
 );
 ```
 
@@ -1448,7 +1448,7 @@ const usersWithIds: User[] = users.map(
       id: index,
       // @ts-expect-error
       age: 30,
-    } satisfies User),
+    } satisfies User)
 );
 ```
 
@@ -1541,7 +1541,7 @@ type CallbackType = (
   event: Event,
   x: number,
   y: number,
-  screenId: number,
+  screenId: number
 ) => void;
 ```
 

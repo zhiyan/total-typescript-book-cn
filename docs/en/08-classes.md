@@ -119,7 +119,7 @@ In this case, we'll use the `Album` class to type the `album` parameter of a `pr
 ```typescript
 function printAlbumInfo(album: Album) {
   console.log(
-    `${album.title} by ${album.artist}, released in ${album.releaseYear}.`,
+    `${album.title} by ${album.artist}, released in ${album.releaseYear}.`
   );
 }
 ```
@@ -304,7 +304,7 @@ Another option is to use an arrow function to define the method:
 // inside of the Album class
 printAlbumInfo = () => {
   console.log(
-    `${this.title} by ${this.artist}, released in ${this.releaseYear}.`,
+    `${this.title} by ${this.artist}, released in ${this.releaseYear}.`
   );
 };
 ```
@@ -370,7 +370,7 @@ class Album {
 
   displayInfo() {
     console.log(
-      `${this.title} by ${this.artist}, released in ${this.releaseYear}.`,
+      `${this.title} by ${this.artist}, released in ${this.releaseYear}.`
     );
   }
 }
@@ -453,7 +453,7 @@ class Album {
   // ...
   displayInfo() {
     console.log(
-      `${this.title} by ${this.artist}, released in ${this.releaseYear}.`,
+      `${this.title} by ${this.artist}, released in ${this.releaseYear}.`
     );
   }
 }
@@ -466,7 +466,7 @@ class SpecialEditionAlbum extends Album {
   // ...
   displayInfo() {
     console.log(
-      `${this.title} by ${this.artist}, released in ${this.releaseYear}.`,
+      `${this.title} by ${this.artist}, released in ${this.releaseYear}.`
     );
     console.log(`Bonus tracks: ${this.bonusTracks.join(", ")}`);
   }
@@ -484,7 +484,7 @@ class SpecialEditionAlbum extends Album {
   // ...
   override displayInfo() {
     console.log(
-      `${this.title} by ${this.artist}, released in ${this.releaseYear}.`,
+      `${this.title} by ${this.artist}, released in ${this.releaseYear}.`
     );
     console.log(`Bonus tracks: ${this.bonusTracks.join(", ")}`);
   }
