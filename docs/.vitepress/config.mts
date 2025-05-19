@@ -6,6 +6,8 @@ export default defineConfig({
   title: "Total Typescript Book 中文版",
   description: "Total Typescript Book",
 
+  base: "/total-typescript-book-cn/",
+
   // 顶层 locales 配置
   locales: {
     root: {
