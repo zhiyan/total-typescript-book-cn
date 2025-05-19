@@ -754,8 +754,6 @@ type test = Expect<Equal<typeof unknownMap, Map<string, unknown>>>;
 
 你的任务是将 `createStringMap` 转换成一个能够接受类型参数来描述 Map 值的泛型函数。确保它对于提供的测试用例能按预期工作。
 
-<Exercise title="练习 1：使函数泛型化" filePath="/src/085-the-utils-folder/215-generic-functions-without-inference.problem.ts"></Exercise>
-
 ### 练习 2：默认类型参数
 
 在练习 1 中将 `createStringMap` 函数泛型化后，不带类型参数调用它时，值类型默认为 `unknown`：
@@ -768,8 +766,6 @@ const stringMap: Map<string, unknown>;
 ```
 
 你的目标是为 `createStringMap` 函数添加一个默认类型参数，以便在未提供类型参数时，它默认为 `string`。请注意，你仍然可以通过在调用函数时提供类型参数来覆盖默认类型。
-
-<Exercise title="练习 2：默认类型参数" filePath="/src/085-the-utils-folder/216-type-parameter-defaults-in-generic-functions.problem.ts"></Exercise>
 
 ### 练习 3：泛型函数中的推断
 
@@ -815,8 +811,6 @@ it("should work on strings", () => {
 请注意，在测试中，我们调用函数时并未显式提供类型参数。TypeScript 应该能够从参数中推断出类型。
 
 调整函数并插入必要的类型注解，以确保两个测试中的 `result` 类型分别被推断为 `number[]` 和 `string[]`。
-
-<Exercise title="练习 3：泛型函数中的推断" filePath="/src/085-the-utils-folder/217-generic-functions-with-inference.problem.ts"></Exercise>
 
 ### 练习 4：类型参数约束
 
@@ -887,8 +881,6 @@ it("Should accept a custom error", () => {
 ```
 
 你的任务是更新 `addCodeToError` 的类型签名，以强制执行必要的约束，使得 `TError` 必须具有 `message` 属性，并且可以选择性地具有 `code` 属性。
-
-<Exercise title="练习 4：类型参数约束" filePath="/src/085-the-utils-folder/216-type-parameter-defaults-in-generic-functions.problem.ts"></Exercise>
 
 ### 练习 5：结合泛型类型和函数
 
@@ -969,8 +961,6 @@ it("should return the result if the function succeeds", async () => {
 ```
 
 你的任务是更新 `safeFunction` 使其拥有一个泛型类型参数，并更新 `PromiseFunc` 使其不再返回 `Promise<any>`。这将需要你结合泛型类型和函数来确保测试成功通过。
-
-<Exercise title="练习 5：结合泛型类型和函数" filePath="/src/085-the-utils-folder/219-combining-generic-types-with-generic-functions.problem.ts"></Exercise>
 
 ### 练习 6：泛型函数中的多个类型参数
 
@@ -1096,8 +1086,6 @@ it("should return the result if the function succeeds", async () => {
 
 更新函数和泛型类型的类型，并使这些测试成功通过。
 
-<Exercise title="练习 6：泛型函数中的多个类型参数" filePath="/src/085-the-utils-folder/220-multiple-type-arguments-in-generic-functions.problem.ts"></Exercise>
-
 ### 练习 8：断言函数
 
 本练习从一个 `User` 接口开始，该接口具有 `id` 和 `name` 属性。然后我们有一个 `AdminUser` 接口，它扩展了 `User`，继承了其所有属性并添加了一个 `roles` 字符串数组属性：
@@ -1163,8 +1151,6 @@ const handleRequest = (user: User | AdminUser) => {
 在调用 `assertIsAdminUser` 之前，`user` 类型是 `User | AdminUser`，但在调用函数之后，它并没有被收窄为 `AdminUser`。这意味着我们无法访问 `roles` 属性。
 
 你的任务是使用正确的类型断言更新 `assertIsAdminUser` 函数，以便在调用函数后将 `user` 识别为 `AdminUser`。
-
-<Exercise title="练习 8：断言函数" filePath="/src/085-the-utils-folder/222-assertion-functions.problem.ts"></Exercise>
 
 ### 解决方案 1：使函数泛型化
 

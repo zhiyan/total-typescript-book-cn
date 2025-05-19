@@ -584,8 +584,6 @@ const handleFormData = (e: SubmitEvent) => {
 
 At runtime, this code works flawlessly. However, at the type level, TypeScript shows an error under `e.target`. Your task is to provide TypeScript with additional information in order to resolve the error.
 
-<Exercise title="Exercise 2: Provide Additional Info to TypeScript" filePath="/src/045-annotations-and-assertions/141-as-and-as-any.problem.ts"></Exercise>
-
 ### Exercise 4: Solving Issues with Assertions
 
 Here we'll revisit a previous exercise, but solve it in a different way.
@@ -616,8 +614,6 @@ Previously we solved this challenge by extracting `searchParams.name` into a con
 However, this time you need to solve it two different ways: Once with `as` and once with non-null assertion.
 
 Note that this is slightly less safe than the previous solution, but it's still a good technique to learn.
-
-<Exercise title="Exercise 4: Solving Issues with Assertions" filePath="/src/045-annotations-and-assertions/143.5-non-null-assertions.problem.ts"></Exercise>
 
 ### Exercise 6: Enforcing Valid Configuration
 
@@ -656,8 +652,6 @@ type test = Expect<
 Even though the test case passes, we have an error in the `staging` object inside of `configurations`. We're expecting an error on `notAllowed: true`, but the `@ts-expect-error` directive is not working because TypeScript is not recognizing that `notAllowed` is not allowed.
 
 Your task is to determine an appropriate way to annotate our `configurations` object to retain accurate `Environment` inference from it while simultaneously throwing an error for members that are not allowed. Hint: Consider using a helper type that allows you to specify a data shape.
-
-<Exercise title="Exercise 6: Enforcing Valid Configuration" filePath="/src/045-annotations-and-assertions/146.5-typeof-keyof-and-satisfies-keyword.problem.ts"></Exercise>
 
 ### Exercise 7: Variable Annotation vs. `as` vs. `satisfies`
 
@@ -742,8 +736,6 @@ Your job is to rearrange the annotations to correct these issues.
 
 At the end of this exercise, you should have used `as`, variable annotations, and `satisfies` once each.
 
-<Exercise title="Exercise 7: Variable Annotation vs. `as` vs. `satisfies`" filePath="/src/045-annotations-and-assertions/147-satisfies-vs-as-vs-variable-annotations.problem.ts"></Exercise>
-
 ### Exercise 8: Create a Deeply Read-Only Object
 
 Here we have a `routes` object:
@@ -790,8 +782,6 @@ type tests = [
 ```
 
 Your task is to update the `routes` object typing so that all errors are resolved. This will require you to use `satisfies` as well as another annotation that ensures the object is deeply read-only.
-
-<Exercise title="Exercise 8: Create a Deeply Read-Only Object" filePath="/src/045-annotations-and-assertions/148-satisfies-with-as-const.problem.ts"></Exercise>
 
 ### Solution 2: Provide Additional Info to TypeScript
 

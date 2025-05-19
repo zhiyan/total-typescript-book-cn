@@ -796,8 +796,6 @@ Could not find a declaration file for module './example'.
 
 你的任务是为 `example.js` 文件创建一个声明文件。
 
-<Exercise title="练习 1：为一个 JavaScript 模块添加类型" filePath="/src/060-modules-scripts-and-declaration-files/164-declaration-files-can-be-used-to-type-js-files.problem"></Exercise>
-
 ### 练习 2：环境上下文 (Ambient Context)
 
 考虑一个名为 `state` 的变量，它从一个全局的 `DEBUG.getState()` 函数返回：
@@ -821,8 +819,6 @@ const state: any;
 
 你的任务是指定 `DEBUG` 在此模块（且仅在此模块）中可用，而无需提供其实现。这将帮助 TypeScript 理解 `state` 的类型并提供预期的类型检查。
 
-<Exercise title="练习 2：环境上下文" filePath="/src/060-modules-scripts-and-declaration-files/166-ambient-context-and-declare-const.problem"></Exercise>
-
 ### 练习 3：修改 `window`
 
 现在让我们设想一下，我们希望我们的 `DEBUG` 对象只能通过 `window` 对象访问：
@@ -843,8 +839,6 @@ type test = Expect<Equal<typeof state, { id: string }>>;
 `DEBUG` 上还有一个错误，告诉我们 TypeScript 看不到 `DEBUG` 类型。
 
 你的任务是指定 `DEBUG` 在 `window` 对象上可用。这将帮助 TypeScript 理解 `state` 的类型并提供预期的类型检查。
-
-<Exercise title="练习 3：修改 `window`" filePath="/src/065-types-you-dont-control/174.5-modifying-window.problem"></Exercise>
 
 ### 练习 4：修改 `process.env`
 
@@ -875,8 +869,6 @@ TypeScript 不知道 `MY_ENV_VAR` 环境变量，所以它不能确定它会是�
 这里有几个提示可以帮助你：
 
 在 DefinitelyTyped 的 `@types/node` 内部，`ProcessEnv` 接口负责环境变量。它可以在 `NodeJS` 命名空间内找到。你可能需要回顾之前的章节来刷新你对类型和命名空间的声明合并的记忆，以便解决这个练习。
-
-<Exercise title="练习 4：修改 `process.env`" filePath="/src/065-types-you-dont-control/175.5-modifying-process-env.problem"></Exercise>
 
 ### 解决方案 1：为一个 JavaScript 模块添加类型
 

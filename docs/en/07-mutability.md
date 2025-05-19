@@ -366,8 +366,6 @@ modifyButtons(buttonsToChange);
 
 Your task is to determine why this error shows up, then resolve it.
 
-<Exercise title="Exercise 1: Inference with an Array of Objects" filePath="/src/028-mutability/098-object-property-inference.problem.ts"></Exercise>
-
 #### Exercise 2: Avoiding Array Mutation
 
 This `printNames` function accepts an array of `name` strings and logs them to the console. However, there are also non-working `@ts-expect-error` comments that should not allow for names to be added or changed:
@@ -388,8 +386,6 @@ function printNames(names: string[]) {
 ```
 
 Your task is to update the type of the `names` parameter so that the array cannot be mutated. There are two ways to solve this problem.
-
-<Exercise title="Exercise 2: Avoiding Array Mutation" filePath="/src/028-mutability/103-readonly-arrays.problem.ts"></Exercise>
 
 #### Exercise 3: An Unsafe Tuple
 
@@ -428,15 +424,13 @@ const dangerousFunction = (arrayOfNumbers: number[]) => {
 // ---cut---
 dangerousFunction(
   // @ts-expect-error
-  myHouse,
+  myHouse
 );
 ```
 
 Your task is to adjust the type of `Coordinate` such that TypeScript triggers an error when we attempt to pass `myHouse` into `dangerousFunction`.
 
 Note that you should only change `Coordinate`, and leave the function untouched.
-
-<Exercise title="Exercise 3: An Unsafe Tuple" filePath="/src/028-mutability/104.5-fixing-unsafe-tuples.problem.ts"></Exercise>
 
 #### Solution 1: Inference with an Array of Objects
 
@@ -769,7 +763,7 @@ const example = async () => {
 
   type Tests = [
     Expect<Equal<typeof error, Error | undefined>>,
-    Expect<Equal<typeof data, any>>,
+    Expect<Equal<typeof data, any>>
   ];
 };
 ```
@@ -789,8 +783,6 @@ Your challenge is to modify the `fetchData` function implementation so that Type
 Depending on whether or not the fetch operation is successful, the tuple should contain either an error message or a pair of `undefined` and the data fetched.
 
 Hint: There are two possible approaches to solve this challenge. One way would be to define an explicit return type for the function. Alternatively, you could attempt to add or change type annotations for the `return` values within the function.
-
-<Exercise title="Exercise 1: Returning A Tuple From A Function" filePath="/src/028-mutability/106-as-const-to-make-functions-infer-a-tuple.problem.ts"></Exercise>
 
 #### Exercise 2: Inferring Literal Values In Arrays
 
@@ -834,8 +826,6 @@ const buttonsToChange: ButtonAttributes[] = [
 This time, your challenge is to solve the error by finding a different solution. Specifically, you should modify the `buttonsToChange` array so that TypeScript infers the literal type of the `type` property.
 
 You should not alter the `ButtonAttributes` type definition or the `modifyButtons` function.
-
-<Exercise title="Exercise 2: Inferring Literal Values In Arrays" filePath="/src/028-mutability/107-as-const-can-make-strings-infer-as-their-literals-in-objects.explainer.ts"></Exercise>
 
 #### Solution 1: Returning A Tuple From A Function
 
@@ -934,7 +924,7 @@ const buttonsToChange: readonly [
   },
   {
     readonly type: "submit";
-  },
+  }
 ];
 ```
 

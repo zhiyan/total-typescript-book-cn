@@ -282,8 +282,6 @@ Argument of type 'number' is not assignable to parameter of type 'boolean'
 
 你的挑战是思考我们如何更改类型以消除错误，并确保 `result` 是一个 `number`。你可以将鼠标悬停在 `result` 上进行检查。
 
-<Exercise title="练习 1：带函数参数的基本类型" filePath="/src/015-essential-types-and-annotations/020-basic-types-with-function-parameters.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAd9N"></Exercise>
-
 #### 练习 2：注解空参数
 
 这里我们有一个 `concatTwoStrings` 函数，其结构与 `add` 函数类似。它接受两个参数 `a` 和 `b`，并返回一个字符串。
@@ -314,8 +312,6 @@ type test = Expect<Equal<typeof result, string>>;
 ```
 
 你的任务是为 `concatTwoStrings` 函数添加一些函数参数注解以消除错误。
-
-<Exercise title="练习 2：注解空参数" filePath="/src/015-essential-types-and-annotations/021-annotating-empty-parameters.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAdKe"></Exercise>
 
 #### 练习 3：基本类型
 
@@ -351,8 +347,6 @@ Type 'boolean' is not assignable to type 'string'.
 ```
 
 更改每个变量上注解的类型以消除错误。
-
-<Exercise title="练习 3：基本类型" filePath="/src/015-essential-types-and-annotations/022-all-types.problem.ts" resourceId="NMpTvrI4rUCyVa4GVzY1iN"></Exercise>
 
 #### 练习 4：`any` 类型
 
@@ -411,8 +405,6 @@ The latest test that might've caused the error is "Should handle a form submit".
 为什么会发生这个错误？为什么 TypeScript 没有在这里给我们一个错误？
 
 我会给你一个线索。我在这里隐藏了一个讨厌的拼写错误。你能修复它吗？
-
-<Exercise title="练习 4：`any` 类型" filePath="/src/015-essential-types-and-annotations/032.5-any.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAeU3"></Exercise>
 
 #### 解决方案 1：带函数参数的基本类型
 
@@ -602,8 +594,6 @@ Parameter 'user' implicitly has an 'any' type.
 
 我们如何键入 `user` 参数以确保它具有这些属性并且它们是正确的类型？
 
-<Exercise title="练习 1：对象字面量类型" filePath="/src/015-essential-types-and-annotations/025-object-literal-types.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAdzz"></Exercise>
-
 #### 练习 2：可选属性类型
 
 这是 `concatName` 函数的一个更新版本，如果未提供姓氏，则仅返回名字：
@@ -639,8 +629,6 @@ const result = concatName({
 错误告诉我们缺少一个属性，但错误是不正确的。我们*确实*希望支持仅包含 `first` 属性的对象。换句话说，`last` 需要是可选的。
 
 你将如何更新此函数以修复错误？
-
-<Exercise title="练习 2：可选属性类型" filePath="/src/015-essential-types-and-annotations/026-optional-property-types.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAeIm"></Exercise>
 
 #### 解决方案 1：对象字面量类型
 
@@ -824,8 +812,6 @@ it("should return the perimeter of a rectangle", () => {
 尽管一切都按预期工作，但仍有机会进行重构以清理代码。
 
 你如何使用 `type` 关键字使此代码更具可读性？
-
-<Exercise title="练习 1：`type` 关键字" filePath="/src/015-essential-types-and-annotations/027-type-keyword.problem.ts" resourceId="jUJqrXCHRph0Z4Fs6Ll3za"></Exercise>
 
 #### 解决方案 1：`type` 关键字
 
@@ -1037,8 +1023,6 @@ Object literal may only specify known properties, and 'items' does not exist in 
 
 你将如何修复此错误？
 
-<Exercise title="练习 1：数组类型" filePath="/src/015-essential-types-and-annotations/028-arrays.problem.ts" resourceId="jUJqrXCHRph0Z4Fs6Ll3za"></Exercise>
-
 #### 练习 2：对象数组
 
 考虑这个 `processRecipe` 函数，它接受一个 `Recipe` 类型：
@@ -1073,8 +1057,6 @@ Object literal may only specify known properties, and 'ingredients' does not exi
 ```
 
 结合你所看到的键入对象属性和处理数组的知识，你将如何为 `Recipe` 类型指定 `ingredients`？
-
-<Exercise title="练习 2：对象数组" filePath="/src/015-essential-types-and-annotations/029-arrays-of-objects.problem.ts" resourceId="YgFRxBViy44CfW0H2dToDx"></Exercise>
 
 #### 练习 3：元组
 
@@ -1129,8 +1111,6 @@ setRange([0, 10, 20]);
 
 `setRange` 函数的代码需要更新类型注解，以指定它只接受包含两个数字的元组。
 
-<Exercise title="练习 3：元组" filePath="/src/015-essential-types-and-annotations/031-tuples.problem.ts" resourceId="YgFRxBViy44CfW0H2dTomV"></Exercise>
-
 #### 练习 4：元组的可选成员
 
 这个 `goToLocation` 函数接受一个坐标数组。每个坐标都有 `latitude` 和 `longitude`，它们都是数字，还有一个可选的 `elevation`，它也是一个数字：
@@ -1156,8 +1136,6 @@ const goToLocation = (coordinates: Array<number>) => {
 ```
 
 你的挑战是更新 `coordinates` 参数的类型注解，以指定它应该是一个包含三个数字的元组，其中第三个数字是可选的。
-
-<Exercise title="练习 4：元组的可选成员" filePath="/src/015-essential-types-and-annotations/032-optional-members-of-tuples.problem.ts" resourceId="jUJqrXCHRph0Z4Fs6Ll7aP"></Exercise>
 
 #### 解决方案 1：数组类型
 
@@ -1439,8 +1417,6 @@ new () => Map<any, any> (+3 overloads)
 
 我们如何键入 `userMap` 以便键必须是数字，并且值是具有 `name` 和 `age` 属性的对象？
 
-<Exercise title="练习 1：将类型传递给 Map" filePath="/src/015-essential-types-and-annotations/036-pass-types-to-map.problem.ts" resourceId="YgFRxBViy44CfW0H2dTq1H"></Exercise>
-
 #### 练习 2：`JSON.parse()` 无法接收类型参数
 
 考虑以下代码，它使用 `JSON.parse` 来解析一些 JSON：
@@ -1480,8 +1456,6 @@ type test = Expect<
 测试错误告诉我们 `parsedData` 的类型不是我们期望的。属性 `name` 和 `age` 未被识别。
 
 为什么会发生这种情况？有什么不同的方法可以纠正这些类型错误？
-
-<Exercise title="练习 2：`JSON.parse()` 无法接收类型参数" filePath="/src/015-essential-types-and-annotations/037-json-parse-cant-receive-type-arguments.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAfD9"></Exercise>
 
 #### 解决方案 1：将类型传递给 Map
 
@@ -1845,8 +1819,6 @@ const result2 = concatName("John");
 
 尝试使用可选参数注解来修复错误。
 
-<Exercise title="练习 1：可选函数参数" filePath="/src/015-essential-types-and-annotations/023-optional-function-parameters.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAdVv"></Exercise>
-
 #### 练习 2：默认函数参数
 
 这里我们有与之前相同的 `concatName` 函数，其中 `last` 名称是可选的：
@@ -1903,8 +1875,6 @@ expect(result).toEqual("John Pocock");
 
 更新 `concatName` 函数，以便在未提供姓氏时使用 `Pocock` 作为默认姓氏。
 
-<Exercise title="练习 2：默认函数参数" filePath="/src/015-essential-types-and-annotations/024-default-function-parameters.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAdoi"></Exercise>
-
 #### 练习 3：剩余参数
 
 这里我们有一个 `concatenate` 函数，它接受可变数量的字符串：
@@ -1919,8 +1889,6 @@ export function concatenate(...strings) {
 测试通过了，但是在 `...strings` 剩余参数上有一个错误。
 
 你将如何更新剩余参数以指定它应该是一个字符串数组？
-
-<Exercise title="练习 3：剩余参数" filePath="/src/015-essential-types-and-annotations/030-rest-parameters.problem.ts" resourceId="jUJqrXCHRph0Z4Fs6Ll6T5"></Exercise>
 
 #### 练习 4：函数类型
 
@@ -1993,8 +1961,6 @@ modifyUser(
 
 你将如何键入 `makeChange` 使其成为一个接受 `User` 并返回 `User` 的函数？
 
-<Exercise title="练习 4：函数类型" filePath="/src/015-essential-types-and-annotations/033-function-types.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAeqb"></Exercise>
-
 #### 练习 5：返回 `void` 的函数
 
 这里我们探讨一个经典的 Web 开发示例。
@@ -2033,8 +1999,6 @@ addClickEventListener(
 
 应该如何键入 `addClickEventListener` 以便解决每个错误？
 
-<Exercise title="练习 5：返回 `void` 的函数" filePath="/src/015-essential-types-and-annotations/034-functions-returning-void.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAf1s"></Exercise>
-
 #### 练习 6：`void` 与 `undefined`
 
 我们有一个接受回调函数并调用它的函数。回调函数不返回任何内容，因此我们将其键入为 `() => undefined`：
@@ -2062,8 +2026,6 @@ acceptsCallback(returnString);
 ```
 
 为什么会发生这种情况？我们可以更改 `acceptsCallback` 的类型来修复此错误吗？
-
-<Exercise title="练习 6：`void` 与 `undefined`" filePath="/src/015-essential-types-and-annotations/034.5-void-vs-undefined.problem.ts"></Exercise>
 
 #### 练习 7：键入异步函数
 
@@ -2133,8 +2095,6 @@ const example = async () => {
 我们如何在不更改对 `fetch` 或 `response.json()` 的调用的情况下将 `data` 键入为数字？
 
 这里有两种可能的解决方案。
-
-<Exercise title="练习 7：键入异步函数" filePath="/src/015-essential-types-and-annotations/038-type-async-functions.problem.ts" resourceId="1fZdJK1AI9JNeRElmqAfhD"></Exercise>
 
 #### 解决方案 1：可选函数参数
 

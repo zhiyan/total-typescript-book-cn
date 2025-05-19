@@ -1014,8 +1014,6 @@ acceptAnythingExceptNullOrUndefined(
 
 您的任务是向 `acceptAnythingExceptNullOrUndefined` 函数添加一个类型注解，使其能够接受除 `null` 或 `undefined` 之外的任何值。
 
-\<Exercise title="练习 1：接受除 `null` 和 `undefined` 之外的任何内容" filePath="/src/050-the-weird-parts/150-empty-object-type.problem.ts" resourceId="NMpTvrI4rUCyVa4GW2ViSR"\>\</Exercise\>
-
 ### 练习 2：检测对象中的额外属性
 
 在这个练习中，我们处理一个 `options` 对象以及一个 `WorkspaceOptions` interface，它指定了 `url`、`method`、`headers` 和 `body`：
@@ -1053,8 +1051,6 @@ myFetch(options);
 ```
 
 您的挑战是确定 `@ts-expect-error` 指令为什么不起作用，并重构代码使其起作用。尝试用多种方法解决它！
-
-\<Exercise title="练习 2：检测对象中的额外属性" filePath="/src/050-the-weird-parts/152-excess-properties-warnings.problem.ts" resourceId="PUZfccUL9g0ocvr45qbRoQ"\>\</Exercise\>
 
 ### 练习 3：检测函数中的额外属性
 
@@ -1109,8 +1105,6 @@ const usersWithIds: User[] = users.map((user, index) => ({
 
 您的任务是确定为什么 TypeScript 在这种情况下没有引发错误，并找到两种不同的解决方案，使其在添加意外属性时适当地报错。
 
-\<Exercise title="练习 3：检测函数中的额外属性" filePath="/src/050-the-weird-parts/153-excess-properties-warnings-in-functions.problem.ts" resourceId="PUZfccUL9g0ocvr45qbS8Y"\>\</Exercise\>
-
 ### 练习 4：迭代对象
 
 考虑一个具有 `id` 和 `name` 属性的 `User` interface，以及一个接受 `User` 作为其参数的 `printUser` 函数：
@@ -1148,8 +1142,6 @@ it("Should log all the keys of the user", () => {
 尝试用 `for` 循环解决此练习作为一种方案，用 `Object.keys().forEach()` 作为另一种方案。作为加分项，尝试将函数参数的类型扩展到 `User` 之外作为第三种方案。
 
 请记住，`Object.keys()` 的类型被指定为始终返回一个字符串数组。
-
-\<Exercise title="练习 4：迭代对象" filePath="/src/050-the-weird-parts/154.6-iterating-over-objects.problem.ts" resourceId="PUZfccUL9g0ocvr45qbSW2"\>\</Exercise\>
 
 ### 练习 5：函数参数比较
 
@@ -1236,8 +1228,6 @@ listenToEvent((event, x, y, screenId) => {
 
 您的任务是更新 `CallbackType` 以确保它可以处理所有这些情况。
 
-\<Exercise title="练习 5：函数参数比较" filePath="/src/050-the-weird-parts/155-function-parameter-comparisons.problem.ts" resourceId="jUJqrXCHRph0Z4Fs6VxI9r"\>\</Exercise\>
-
 ### 练习 6：带有对象参数的函数联合
 
 这里我们处理两个函数：`logId` 和 `logName`。`logId` 函数将对象中的 `id` 记录到控制台，而 `logName` 对 `name` 执行相同的操作：
@@ -1277,8 +1267,6 @@ const logAll = (obj) => {
 ```
 
 您的任务是确定如何类型化 `logAll` 函数的 `obj` 参数。仔细查看各个 logger 函数的类型签名，以了解此对象应该是什么类型。
-
-\<Exercise title="练习 6：带有对象参数的函数联合" filePath="/src/050-the-weird-parts/156-unions-of-functions-with-object-params.problem.ts" resourceId="NMpTvrI4rUCyVa4GW2ViZX"\>\</Exercise\>
 
 ### 练习 7：具有不兼容参数的函数联合
 
@@ -1329,8 +1317,6 @@ const formatter:
 当前在 `format` 函数的 return 语句中的 `input` 上存在错误。您的挑战是在类型级别解决此错误，即使代码在运行时可以工作。尝试使用断言作为一种解决方案，使用类型守卫作为另一种解决方案。
 
 一个有用的小知识——`any` 不能分配给 `never`。
-
-\<Exercise title="练习 7：具有不兼容参数的函数联合" filePath="/src/050-the-weird-parts/157-unions-of-functions.problem.ts" resourceId="Mcr8ILwjCSlKdfKEBg8upM"\>\</Exercise\>
 
 ### 解决方案 1：接受除 `null` 和 `undefined` 之外的任何内容
 

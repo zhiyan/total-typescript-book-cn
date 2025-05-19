@@ -584,8 +584,6 @@ const handleFormData = (e: SubmitEvent) => {
 
 在运行时，此代码完美运行。然而，在类型级别，TypeScript 在 `e.target` 下显示一个错误。你的任务是向 TypeScript 提供附加信息以解决该错误。
 
-\<Exercise title="练习 2：向 TypeScript 提供附加信息" filePath="/src/045-annotations-and-assertions/141-as-and-as-any.problem.ts"\>\</Exercise\>
-
 ### 练习 4：使用断言解决问题
 
 这里我们将重新审视之前的练习，但用不同的方式解决它。
@@ -616,8 +614,6 @@ const findUsersByName = (
 然而，这一次你需要用两种不同的方法来解决它：一次使用 `as`，一次使用非空断言。
 
 请注意，这比以前的解决方案稍微不安全，但它仍然是一个值得学习的好技巧。
-
-\<Exercise title="练习 4：使用断言解决问题" filePath="/src/045-annotations-and-assertions/143.5-non-null-assertions.problem.ts"\>\</Exercise\>
 
 ### 练习 6：强制执行有效配置
 
@@ -656,8 +652,6 @@ type test = Expect<
 尽管测试用例通过了，但我们在 `configurations` 内部的 `staging` 对象中有一个错误。我们期望 `notAllowed: true` 上出现错误，但 `@ts-expect-error` 指令不起作用，因为 TypeScript 没有识别出 `notAllowed` 是不允许的。
 
 你的任务是确定一种合适的方法来注解我们的 `configurations` 对象，以便从中保留准确的 `Environment` 推断，同时为不允许的成员抛出错误。提示：考虑使用一个辅助类型，允许你指定数据形状。
-
-\<Exercise title="练习 6：强制执行有效配置" filePath="/src/045-annotations-and-assertions/146.5-typeof-keyof-and-satisfies-keyword.problem.ts"\>\</Exercise\>
 
 ### 练习 7：变量注解 vs. `as` vs. `satisfies`
 
@@ -742,8 +736,6 @@ type test3 = Expect<Equal<typeof element, HTMLElement>>;
 
 在本练习结束时，你应该分别使用过一次 `as`、变量注解和 `satisfies`。
 
-\<Exercise title="练习 7：变量注解 vs. `as` vs. `satisfies`" filePath="/src/045-annotations-and-assertions/147-satisfies-vs-as-vs-variable-annotations.problem.ts"\>\</Exercise\>
-
 ### 练习 8：创建一个深度只读对象
 
 这里我们有一个 `routes` 对象：
@@ -790,8 +782,6 @@ type tests = [
 ```
 
 你的任务是更新 `routes` 对象类型，以便解决所有错误。这将需要你使用 `satisfies` 以及另一个确保对象是深度只读的注解。
-
-\<Exercise title="练习 8：创建一个深度只读对象" filePath="/src/045-annotations-and-assertions/148-satisfies-with-as-const.problem.ts"\>\</Exercise\>
 
 ### 解决方案 2：向 TypeScript 提供附加信息
 

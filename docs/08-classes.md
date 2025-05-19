@@ -717,8 +717,6 @@ it("Should store some basic properties", () => {
 
 你的挑战是实现 `CanvasNode` class 以满足这些要求。为了额外练习，请分别使用和不使用 constructor 来解决这个挑战。
 
-\<Exercise title="练习 1：创建一个 Class" filePath="/src/030-classes/108-understand-classes.problem.ts"\>\</Exercise\>
-
 ### 练习 2：实现 Class 方法
 
 在这个练习中，我们简化了 `CanvasNode` class，使其不再具有只读属性：
@@ -756,8 +754,6 @@ it("Should be able to move to a new location", () => {
 目前，`move` 方法调用下有一个错误，因为 `CanvasNode` class 没有 `move` 方法。
 
 你的任务是向 `CanvasNode` class 添加一个 `move` 方法，该方法将 `x` 和 `y` 属性更新到新位置。
-
-\<Exercise title="练习 2：实现 Class 方法" filePath="/src/030-classes/109-class-methods.problem.ts"\>\</Exercise\>
 
 ### 练习 3：实现一个 Getter
 
@@ -824,8 +820,6 @@ it("Should be able to receive an initial position", () => {
 
 你的任务是更新 `CanvasNode` class 以包含一个 `position` getter，从而允许测试用例通过。
 
-\<Exercise title="练习 3：实现一个 Getter" filePath="/src/030-classes/111-getters.problem.ts"\>\</Exercise\>
-
 ### 练习 4：实现一个 Setter
 
 `CanvasNode` class 已更新，因此 `x` 和 `y` 现在是 private 属性：
@@ -860,8 +854,6 @@ canvasNode.position = { x: 10, y: 20 };
 
 你的任务是为 `position` 属性编写一个 setter，以允许测试用例通过。
 
-\<Exercise title="练习 4：实现一个 Setter" filePath="/src/030-classes/113-setters.problem.ts"\>\</Exercise\>
-
 ### 练习 5：扩展一个 Class
 
 这里我们有一个更复杂的 `CanvasNode` class 版本。
@@ -890,8 +882,6 @@ class CanvasNode {
 你的任务是重构 `CanvasNode` class，将 `x` 和 `y` 属性拆分到一个名为 `Shape` 的单独 class 中。然后，`CanvasNode` class 应扩展 `Shape` class，添加 `viewMode` 属性和与之相关的逻辑。
 
 如果你愿意，可以使用 `abstract` class 来定义 `Shape`。
-
-\<Exercise title="练习 5：扩展一个 Class" filePath="/src/030-classes/114-extending-other-classes.problem.ts"\>\</Exercise\>
 
 ### 解决方案 1：创建一个 Class
 

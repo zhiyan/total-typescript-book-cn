@@ -321,15 +321,11 @@ type Product = {
 
 Your task is to create a new `BaseEntity` type that includes the `id` and `createdAt` properties. Then, use the `&` operator to create `User` and `Product` types that intersect with `BaseEntity`.
 
-<Exercise title="Exercise 1: Create an Intersection Type" filePath="/src/020-objects/081-extend-object-using-intersections.problem.ts"></Exercise>
-
 #### Exercise 2: Extending Interfaces
 
 After the previous exercise, you'll have a `BaseEntity` type along with `User` and `Product` types that intersect with it.
 
 This time, your task is to refactor the types to be interfaces, and use the `extends` keyword to extend the `BaseEntity` type. For extra credit, try creating and extending multiple smaller interfaces.
-
-<Exercise title="Exercise 2: Extending Interfaces" filePath="/src/020-objects/082-extend-object-using-interfaces.problem.ts"></Exercise>
 
 #### Solution 1: Create an Intersection Type
 
@@ -670,8 +666,6 @@ scores.science = 85;
 
 Your task is to give `scores` a type annotation to support the dynamic subject keys. There are three ways: an inline index signature, a type, an interface, or a `Record`.
 
-<Exercise title="Exercise 1: Use an Index Signature for Dynamic Keys" filePath="/src/020-objects/084-index-signatures.problem.ts"></Exercise>
-
 #### Exercise 2: Default Properties with Dynamic Keys
 
 Here, we're trying to model a situation where we want some required keys - `math`, `english`, and `science` - on our scores object.
@@ -696,8 +690,6 @@ scores.spanish = 70;
 The definition of scores should be erroring, because `science` is missing - but it's not, because our definition of `Scores` is currently an empty object.
 
 Your task is to update the `Scores` interface to specify default keys for `math`, `english`, and `science` while allowing for any other subject to be added. Once you've updated the type correctly, the red squiggly line below `@ts-expect-error` will go away because `science` will be required but missing. See if you can use `interface extends` to achieve this.
-
-<Exercise title="Exercise 2: Default Properties with Dynamic Keys" filePath="/src/020-objects/085-index-signatures-with-defined-keys.problem.ts"></Exercise>
 
 #### Exercise 3: Restricting Object Keys With Records
 
@@ -735,8 +727,6 @@ const configurations: Configurations = {
 ```
 
 Update the `Configurations` type so that only the keys from `Environment` are allowed on the `configurations` object. Once you've updated the type correctly, the red squiggly line below `@ts-expect-error` will go away because `notAllowed` will be disallowed properly.
-
-<Exercise title="Exercise 3: Restricting Object Keys With Records" filePath="/src/020-objects/087-record-type-with-union-as-keys.problem.ts"></Exercise>
 
 #### Exercise 4: Dynamic Key Support
 
@@ -797,8 +787,6 @@ const obj = {
 ```
 
 Your task is to update the `hasKey` function so that all of these tests pass. Try to be as concise as possible!
-
-<Exercise title="Exercise 4: Dynamic Key Support" filePath="/src/020-objects/086-property-key-type.problem.ts"></Exercise>
 
 #### Solution 1: Use an Index Signature for Dynamic Keys
 
@@ -1260,8 +1248,6 @@ Your task is to update the typing so that only the `name` and `email` fields are
 
 You can use the helper types we've looked at to accomplish this, but for extra practice try using just interfaces.
 
-<Exercise title="Exercise 1: Expecting Certain Properties" filePath="/src/020-objects/089-pick-type-helper.problem.ts"></Exercise>
-
 #### Exercise 2: Updating a Product
 
 Here we have a function `updateProduct` that takes two arguments: an `id`, and a `productInfo` object derived from the `Product` type, excluding the `id` field.
@@ -1307,8 +1293,6 @@ updateProduct(1, {
 ```
 
 Your challenge is to modify the `productInfo` parameter to reflect these requirements. The `id` should remain absent from `productInfo`, but we also want all other properties in `productInfo` to be optional.
-
-<Exercise title="Exercise 2: Updating a Product" filePath="/src/020-objects/091-omit-type-helper.problem.ts"></Exercise>
 
 #### Solution 1: Expecting Certain Properties
 
@@ -1379,7 +1363,7 @@ In this case, wrapping `Omit<Product, "id">` in `Partial` will remove the `id` w
 ```typescript
 const updateProduct = (
   id: number,
-  productInfo: Partial<Omit<Product, "id">>,
+  productInfo: Partial<Omit<Product, "id">>
 ) => {
   // Do something with the productInfo
 };

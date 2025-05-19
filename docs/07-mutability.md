@@ -366,8 +366,6 @@ modifyButtons(buttonsToChange);
 
 你的任务是确定为什么会出现这个错误，然后解决它。
 
-\<Exercise title="练习 1：对象数组的推断" filePath="/src/028-mutability/098-object-property-inference.problem.ts"\>\</Exercise\>
-
 #### 练习 2：避免数组突变 (Exercise 2: Avoiding Array Mutation)
 
 这个 `printNames` 函数接受一个 `name` 字符串数组并将其记录到控制台。然而，还有一些不起作用的 `@ts-expect-error` 注释，它们不应该允许添加或更改名称：
@@ -388,8 +386,6 @@ function printNames(names: string[]) {
 ```
 
 你的任务是更新 `names` 参数的类型，以便数组不能被改变。有两种方法可以解决这个问题。
-
-\<Exercise title="练习 2：避免数组突变" filePath="/src/028-mutability/103-readonly-arrays.problem.ts"\>\</Exercise\>
 
 #### 练习 3：不安全的元组 (Exercise 3: An Unsafe Tuple)
 
@@ -435,8 +431,6 @@ dangerousFunction(
 你的任务是调整 `Coordinate` 的类型，以便当我们尝试将 `myHouse` 传递给 `dangerousFunction` 时，TypeScript 会触发一个错误。
 
 请注意，你只应更改 `Coordinate`，并保持函数不变。
-
-\<Exercise title="练习 3：不安全的元组" filePath="/src/028-mutability/104.5-fixing-unsafe-tuples.problem.ts"\>\</Exercise\>
 
 #### 解决方案 1：对象数组的推断 (Solution 1: Inference with an Array of Objects)
 
@@ -790,8 +784,6 @@ const data: any;
 
 提示：有两种可能的方法来解决这个挑战。一种方法是为函数定义一个显式的返回类型。或者，你可以尝试为函数内的 `return` 值添加或更改类型注解。
 
-\<Exercise title="练习 1：从函数返回元组" filePath="/src/028-mutability/106-as-const-to-make-functions-infer-a-tuple.problem.ts"\>\</Exercise\>
-
 #### 练习 2：推断数组中的字面量值 (Exercise 2: Inferring Literal Values In Arrays)
 
 让我们回顾一下之前的练习并改进我们的解决方案。
@@ -834,8 +826,6 @@ const buttonsToChange: ButtonAttributes[] = [
 这一次，你的挑战是通过找到不同的解决方案来解决错误。具体来说，你应该修改 `buttonsToChange` 数组，以便 TypeScript 推断 `type` 属性的字面量类型。
 
 你不应更改 `ButtonAttributes` 类型定义或 `modifyButtons` 函数。
-
-\<Exercise title="练习 2：推断数组中的字面量值" filePath="/src/028-mutability/107-as-const-can-make-strings-infer-as-their-literals-in-objects.explainer.ts"\>\</Exercise\>
 
 #### 解决方案 1：从函数返回元组 (Solution 1: Returning A Tuple From A Function)
 

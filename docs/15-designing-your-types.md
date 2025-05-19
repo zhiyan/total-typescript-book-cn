@@ -757,8 +757,6 @@ type PostDataShape =
 
 你的任务是创建一个泛型 `DataShape` 类型以减少 `UserDataShape` 和 `PostDataShape` 类型中的重复。
 
-\<Exercise title="练习 1: 创建 `DataShape` 类型助手" filePath="/src/083-designing-your-types/204-intro-to-generic-types.problem.ts"\>\</Exercise\>
-
 ### 练习 2: 类型化 `PromiseFunc` (Exercise 2: Typing `PromiseFunc`)
 
 此 `PromiseFunc` 类型表示一个返回 promise 的函数：
@@ -787,8 +785,6 @@ type test2 = Expect<Equal<Example2, (input: boolean) => Promise<number>>>;
 错误消息告诉我们 `PromiseFunc` 类型不是泛型的。我们还期望 `PromiseFunc` 类型接收两个类型参数：promise 的输入类型和返回类型。
 
 你的任务是更新 `PromiseFunc`，以便两个测试都通过且没有错误。
-
-\<Exercise title="练习 2: 类型化 `PromiseFunc`" filePath="/src/083-designing-your-types/205-multiple-type-parameters.problem.ts"\>\</Exercise\>
 
 ### 练习 3: 使用 `Result` 类型 (Exercise 3: Working with the `Result` Type)
 
@@ -843,8 +839,6 @@ const createRandomNumber = (): Result<number> => {
 
 你的任务是调整 `Result` 类型，以便 `TError` 默认为 `Error` 类型。
 
-\<Exercise title="练习 3: 使用 `Result` 类型" filePath="/src/083-designing-your-types/207-default-type-parameters.problem.ts"\>\</Exercise\>
-
 ### 练习 4: 约束 `Result` 类型 (Exercise 4: Constraining the `Result` Type)
 
 在更新 `Result` 类型以具有 `TError` 的默认类型后，最好对传入内容的形状添加约束。
@@ -879,8 +873,6 @@ type GoodExample4 = Result<{ id: string }>;
 `GoodExample` 应该无错误通过，但 `BadExample` 应该引发错误，因为 `TError` 类型不是具有 `message` 属性的对象。目前，情况并非如此，正如 `@ts-expect-error` 指令下的错误所示。
 
 你的任务是向 `Result` 类型添加一个约束，以确保 `BadExample` 测试引发错误，而 `GoodExample` 无错误通过。
-
-\<Exercise title="练习 4: 约束 `Result` 类型" filePath="/src/083-designing-your-types/208-type-parameter-constraints.problem.ts"\>\</Exercise\>
 
 ### 练习 5: 更严格的 `Omit` 类型 (Exercise 5: A Stricter `Omit` Type)
 
@@ -934,8 +926,6 @@ type tests = [
 
 你需要记住 `keyof` 以及如何约束类型参数才能完成此练习。
 
-\<Exercise title="练习 5: 更严格的 `Omit` 类型" filePath="/src/083-designing-your-types/209-tighter-version-of-omit.problem.ts"\>\</Exercise\>
-
 ### 练习 6: 路由匹配 (Exercise 6: Route Matching)
 
 这里我们有一个 `route`，类型为 `AbsoluteRoute`：
@@ -976,8 +966,6 @@ goToRoute(
 
 你的任务是优化 `AbsoluteRoute` 类型，以准确期望字符串以正斜杠开头。
 
-\<Exercise title="练习 6: 路由匹配" filePath="/src/083-designing-your-types/210-template-literal-types.problem.ts"\>\</Exercise\>
-
 ### 练习 7: 三明治排列 (Exercise 7: Sandwich Permutations)
 
 在本练习中，我们想要构建一个 `Sandwich` 类型。
@@ -1014,8 +1002,6 @@ type tests = [
 ```
 
 你的任务是使用模板字面量类型来定义 `Sandwich` 类型。这只需一行代码即可完成！
-
-\<Exercise title="练习 7: 三明治排列" filePath="/src/083-designing-your-types/211-passing-unions-to-template-literal-types.problem.ts"\>\</Exercise\>
 
 ### 练习 8: 属性获取器 (Exercise 8: Attribute Getters)
 
@@ -1065,8 +1051,6 @@ type tests = [
 
 你的任务是定义 `AttributeGetters` 类型，使其与预期输出匹配。为此，你需要迭代 `Attributes` 中的每个键，并生成一个函数作为值，该函数然后返回该键的值。
 
-\<Exercise title="练习 8: 属性获取器" filePath="/src/083-designing-your-types/212-mapped-types.problem.ts"\>\</Exercise\>
-
 ### 练习 9: 在映射类型中重命名键 (Exercise 9: Renaming Keys in a Mapped Type)
 
 在前面的练习中创建 `AttributeGetters` 类型后，最好重命名键以使其更具描述性。
@@ -1089,8 +1073,6 @@ type tests = [
 ```
 
 你的挑战是调整 `AttributeGetters` 类型以按指定重映射键。你需要使用 `as` 关键字、模板字面量以及 TypeScript 的内置 `Capitalize<string>` 类型助手。
-
-\<Exercise title="练习 9: 在映射类型中重命名键" filePath="/src/083-designing-your-types/213-as-in-mapped-types.problem.ts"\>\</Exercise\>
 
 ### 解决方案 1: 创建 `DataShape` 类型助手 (Solution 1: Create a `DataShape` Type Helper)
 

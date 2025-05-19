@@ -176,8 +176,6 @@ type test2 = Expect<Equal<typeof result2, string>>;
 
 目前，`username` 参数只接受 `string` 类型，对 `null` 的检查不起作用。更新函数参数的类型，以便解决错误并且函数可以处理 `null`。
 
-\<Exercise title="练习 1：`string` 或 `null`" filePath="/src/018-unions-and-narrowing/053-introduction-to-unions.problem.ts"\>\</Exercise\>
-
 #### 练习 2：限制函数参数 (Exercise 2: Restricting Function Parameters)
 
 这里我们有一个 `move` 函数，它接受一个 `string` 类型的 `direction` 和一个 `number` 类型的 `distance`：
@@ -224,8 +222,6 @@ move(
 ```
 
 您的挑战是更新 `move` 函数，使其仅接受字符串 `"up"`、`"down"`、`"left"` 和 `"right"`。这样，当我们尝试传入任何其他字符串时，TypeScript 将抛出错误。
-
-\<Exercise title="练习 2：限制函数参数" filePath="/src/018-unions-and-narrowing/054-literal-types.problem.ts"\>\</Exercise\>
 
 #### 解决方案 1：`string` 或 `null` (Solution 1: `string` or `null`)
 
@@ -439,8 +435,6 @@ it("Should return false for null", () => {
 
 您的任务是重写 `validateUsername` 函数以添加类型收窄 (narrowing)，以便处理 `null` 的情况并且所有测试都通过。
 
-\<Exercise title="练习 1：使用 `if` 语句进行类型收窄" filePath="/src/018-unions-and-narrowing/059-narrowing-with-if-statements.problem.ts"\>\</Exercise\>
-
 #### 练习 2：通过抛出错误来进行类型收窄 (Exercise 2: Throwing Errors to Narrow)
 
 这里有一行代码使用 `document.getElementById` 来获取一个 HTML 元素，它可以返回 `HTMLElement` 或 `null`：
@@ -462,8 +456,6 @@ type Test = Expect<Equal<typeof appElement, HTMLElement>>;
 ```
 
 您的任务是使用 `throw` 在测试检查 `appElement` 之前缩小其类型。
-
-\<Exercise title="练习 2：通过抛出错误来进行类型收窄" filePath="/src/018-unions-and-narrowing/062-throwing-errors-to-narrow.problem.ts"\>\</Exercise\>
 
 #### 练习 3：使用 `in` 进行类型收窄 (Exercise 3: Using `in` to Narrow)
 
@@ -526,8 +518,6 @@ Property data does not exist on type 'APIResponse'.
 您的挑战是找到在 `handleResponse` 函数的 `if` 条件中缩小类型的正确语法。
 
 更改应在函数内部进行，而不修改代码的任何其他部分。
-
-\<Exercise title="练习 3：使用 `in` 进行类型收窄" filePath="/src/018-unions-and-narrowing/064-narrowing-with-in-statements.problem.ts"\>\</Exercise\>
 
 #### 解决方案 1：使用 `if` 语句进行类型收窄 (Solution 1: Narrowing with `if` Statements)
 
@@ -922,8 +912,6 @@ console.log(error.message);
 
 您的任务是更新 `if` 语句，使其具有正确的条件来检查 `error` 是否具有 message 属性，然后再记录它。查看练习的标题以获取提示……请记住，`Error` 是一个类 (class)。
 
-\<Exercise title="练习 1：使用 `instanceof` 进行错误类型收窄" filePath="/src/018-unions-and-narrowing/065.5-narrowing-with-instanceof-statements.problem.ts"\>\</Exercise\>
-
 #### 练习 2：将 `unknown` 收窄为特定值 (Exercise 2: Narrowing `unknown` to a Value)
 
 这里我们有一个 `parseValue` 函数，它接受一个 `unknown` 类型的 `value`：
@@ -965,8 +953,6 @@ it("Should error when anything else is passed in", () => {
 
 您的挑战是修改 `parseValue` 函数，以便测试通过并且错误消失。我希望您挑战自己，\_仅\_通过在函数内部缩小 `value` 的类型来做到这一点。不要更改类型。这将需要一个非常大的 `if` 语句！
 
-\<Exercise title="练习 2：将 `unknown` 收窄为特定值" filePath="/src/018-unions-and-narrowing/066-narrowing-unknown-to-a-value.problem.ts"\>\</Exercise\>
-
 #### 练习 3：可重用的类型守卫 (Exercise 3: Reusable Type Guards)
 
 假设我们有两个函数，它们都接受一个 `unknown` 类型的 `value`，并尝试将该值解析为一个字符串数组。
@@ -1004,8 +990,6 @@ if (Array.isArray(value) && value.every((item) => typeof item === "string")) {
 这是一个创建可重用类型守卫 (type guard) 的绝佳机会。
 
 所有测试目前都通过了。您的任务是尝试重构这两个函数以使用可重用的类型守卫 (type guard)，并删除重复的代码。事实证明，TypeScript 使这比您预期的要容易得多。
-
-\<Exercise title="练习 3：可重用的类型守卫" filePath="/src/018-unions-and-narrowing/072.5-reusable-type-guards.problem.ts"\>\</Exercise\>
 
 #### 解决方案 1：使用 `instanceof` 进行错误类型收窄 (Solution 1: Narrowing Errors with `instanceof`)
 
@@ -1413,8 +1397,6 @@ function calculateArea({ kind, radius, sideLength }: Shape) {
 
 您的任务是更新 `calculateArea` 函数的实现，以便从传入的 `Shape` 中解构属性时不会出现错误。提示：我在本章中展示的示例\_没有\_使用解构，但某些解构是可能的。
 
-\<Exercise title="练习 1：解构可辨识联合类型" filePath="/src/018-unions-and-narrowing/075-destructuring-a-discriminated-union.problem.ts"\>\</Exercise\>
-
 #### 练习 2：使用 switch 语句收窄可辨识联合类型 (Exercise 2: Narrowing a Discriminated Union with a Switch Statement)
 
 这里是我们之前练习中的 `calculateArea` 函数，但没有任何解构。
@@ -1430,8 +1412,6 @@ function calculateArea(shape: Shape) {
 ```
 
 您的挑战是将此函数重构为使用 `switch` 语句而不是 `if/else` 语句。`switch` 语句应用于缩小 `shape` 的类型并相应地计算面积。
-
-\<Exercise title="练习 2：使用 switch 语句收窄可辨识联合类型" filePath="/src/018-unions-and-narrowing/076-narrowing-a-discriminated-union-with-a-switch-statement.problem.ts"\>\</Exercise\>
 
 #### 练习 3：可辨识元组 (Exercise 3: Discriminated Tuples)
 
@@ -1525,8 +1505,6 @@ async function exampleFunc() {
 
 您的挑战是重新定义 `APIResponse` 类型，使其成为一个可辨识元组 (discriminated tuple)，仅允许上面定义的 `success` 和 `error` 状态的特定组合。
 
-\<Exercise title="练习 3：可辨识元组" filePath="/src/018-unions-and-narrowing/078-destructuring-a-discriminated-tuple.problem.ts"\>\</Exercise\>
-
 #### 练习 4：使用可辨识联合类型处理默认值 (Exercise 4: Handling Defaults with a Discriminated Union)
 
 我们又回到了 `calculateArea` 函数：
@@ -1590,8 +1568,6 @@ TypeScript 在测试中的 `radius` 下方显示了错误：
 
 1.  对 `Shape` 可辨识联合类型 (discriminated union) 进行更新，以允许我们省略 `kind`。
 2.  对 `calculateArea` 函数进行调整，以确保 TypeScript 的类型收窄 (type narrowing) 在函数内正常工作。
-
-\<Exercise title="练习 4：使用可辨识联合类型处理默认值" filePath="/src/018-unions-and-narrowing/080-adding-defaults-to-discriminated-union.problem.ts"\>\</Exercise\>
 
 #### 解决方案 1：解构可辨识联合类型 (Solution 1: Destructuring a Discriminated Union)
 

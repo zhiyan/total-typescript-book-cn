@@ -321,15 +321,11 @@ type Product = {
 
 你的任务是创建一个新的 `BaseEntity` 类型，其中包含 `id` 和 `createdAt` 属性。然后，使用 `&` 运算符创建与 `BaseEntity` 交叉的 `User` 和 `Product` 类型。
 
-<Exercise title="Exercise 1: Create an Intersection Type" filePath="/src/020-objects/081-extend-object-using-intersections.problem.ts"></Exercise>
-
 #### 练习 2：扩展接口
 
 完成上一个练习后，你将拥有一个 `BaseEntity` 类型以及与之交叉的 `User` 和 `Product` 类型。
 
 这一次，你的任务是将这些类型重构为接口，并使用 `extends` 关键字来扩展 `BaseEntity` 类型。作为加分项，尝试创建并扩展多个更小的接口。
-
-<Exercise title="Exercise 2: Extending Interfaces" filePath="/src/020-objects/082-extend-object-using-interfaces.problem.ts"></Exercise>
 
 #### 解决方案 1：创建交叉类型
 
@@ -670,8 +666,6 @@ scores.science = 85;
 
 你的任务是给 `scores` 添加类型注解以支持动态的学科键。有三种方法：内联索引签名、type、interface 或 `Record`。
 
-<Exercise title="Exercise 1: Use an Index Signature for Dynamic Keys" filePath="/src/020-objects/084-index-signatures.problem.ts"></Exercise>
-
 #### 练习 2：具有动态键的默认属性
 
 在这里，我们试图模拟一种情况，即我们希望 `scores` 对象上有一些必需的键——`math`、`english` 和 `science`。
@@ -696,8 +690,6 @@ scores.spanish = 70;
 `scores` 的定义应该报错，因为缺少 `science`——但它没有，因为我们当前对 `Scores` 的定义是一个空对象。
 
 你的任务是更新 `Scores` 接口，为 `math`、`english` 和 `science` 指定默认键，同时允许添加任何其他学科。正确更新类型后，`@ts-expect-error` 下方的红色波浪线将消失，因为 `science` 将是必需的但缺失的。看看你是否可以使用 `interface extends` 来实现这一点。
-
-<Exercise title="Exercise 2: Default Properties with Dynamic Keys" filePath="/src/020-objects/085-index-signatures-with-defined-keys.problem.ts"></Exercise>
 
 #### 练习 3：使用 Records 限制对象键
 
@@ -735,8 +727,6 @@ const configurations: Configurations = {
 ```
 
 更新 `Configurations` 类型，以便只有 `Environment` 中的键才允许在 `configurations` 对象上使用。正确更新类型后，`@ts-expect-error` 下方的红色波浪线将消失，因为 `notAllowed` 将被正确禁止。
-
-<Exercise title="Exercise 3: Restricting Object Keys With Records" filePath="/src/020-objects/087-record-type-with-union-as-keys.problem.ts"></Exercise>
 
 #### 练习 4：动态键支持
 
@@ -797,8 +787,6 @@ const obj = {
 ```
 
 你的任务是更新 `hasKey` 函数，使所有这些测试都能通过。尽量做到尽可能简洁！
-
-<Exercise title="Exercise 4: Dynamic Key Support" filePath="/src/020-objects/086-property-key-type.problem.ts"></Exercise>
 
 #### 解决方案 1：使用索引签名处理动态键
 
@@ -1260,8 +1248,6 @@ const example = async () => {
 
 你可以使用我们已经介绍过的辅助类型来完成这个任务，但为了额外练习，请尝试只使用接口。
 
-<Exercise title="Exercise 1: Expecting Certain Properties" filePath="/src/020-objects/089-pick-type-helper.problem.ts"></Exercise>
-
 #### 练习 2：更新产品
 
 这里我们有一个 `updateProduct` 函数，它接受两个参数：一个 `id` 和一个 `productInfo` 对象，该对象派生自 `Product` 类型，但不包括 `id` 字段。
@@ -1307,8 +1293,6 @@ updateProduct(1, {
 ```
 
 你的挑战是修改 `productInfo` 参数以反映这些要求。`id` 应该仍然不存在于 `productInfo` 中，但我们也希望 `productInfo` 中的所有其他属性都是可选的。
-
-<Exercise title="Exercise 2: Updating a Product" filePath="/src/020-objects/091-omit-type-helper.problem.ts"></Exercise>
 
 #### 解决方案 1：期望特定属性
 

@@ -522,8 +522,6 @@ const inputs: Record<
 
 你的任务是修改 `inputs` Record，使其键派生自 `FormValues` 接口。
 
-\<Exercise title="练习 1：减少键的重复" filePath="/src/040-deriving-types-from-values/125-keyof.problem.ts" resourceId="YgFRxBViy44CfW0H6uOLyz"\>\</Exercise\>
-
 ### 练习 2：从值派生类型
 
 这里，我们有一个名为 `configurations` 的对象，它包含一组用于 `development`、`production` 和 `staging` 的部署环境。
@@ -557,8 +555,6 @@ type Environment = "development" | "production" | "staging";
 
 您的任务是更新 `Environment` 类型，使其从 `configurations` 对象派生。
 
-\<Exercise title="练习 2：从值派生类型" filePath="/src/040-deriving-types-from-values/126-typeof-keyword.problem.ts" resourceId="YgFRxBViy44CfW0H6uOMPr"\>\</Exercise\>
-
 ### 练习 3：访问特定值
 
 这里我们有一个 `programModeEnumMap` 对象，用于保持不同分组的同步。还有一个 `ProgramModeMap` 类型，它使用 `typeof` 来表示整个枚举映射：
@@ -589,8 +585,6 @@ type test = Expect<Equal<Group, "group">>;
 
 你的任务是找到正确的方法来类型化 `Group`，以便测试按预期通过。
 
-\<Exercise title="练习 3：访问特定值" filePath="/src/040-deriving-types-from-values/135-indexed-access-types.problem.ts" resourceId="5EnWog8KD1gKEzaFObJmOY"\>\</Exercise\>
-
 ### 练习 4：使用索引访问类型的联合类型
 
 本练习从与前一个练习相同的 `programModeEnumMap` 和 `ProgramModeMap` 开始：
@@ -618,8 +612,6 @@ type test = Expect<
 ```
 
 这一次，你的挑战是更新 `PlannedPrograms` 类型，以使用索引访问类型来提取 `ProgramModeMap` 值中包含 "`planned`" 的联合。
-
-\<Exercise title="练习 4：使用索引访问类型的联合类型" filePath="/src/040-deriving-types-from-values/136-pass-unions-to-indexed-access-types.problem.ts" resourceId="5EnWog8KD1gKEzaFObJmhp"\>\</Exercise\>
 
 ### 练习 5：提取所有值的联合
 
@@ -660,8 +652,6 @@ type test = Expect<
 
 利用你目前所学到的知识，你的任务是更新 `AllPrograms` 类型，以使用索引访问类型从 `programModeEnumMap` 对象创建所有值的联合。
 
-\<Exercise title="练习 5：提取所有值的联合" filePath="/src/040-deriving-types-from-values/137-pass-keyof-into-an-indexed-access-type.problem.ts" resourceId="VtQChjOYAJCkX9MVx78MCb"\>\</Exercise\>
-
 ### 练习 6：从 `as const` 数组创建联合类型
 
 这里有一个用 `as const` 包装的 `programModes` 数组：
@@ -700,8 +690,6 @@ type test = Expect<
 你的任务是确定如何创建 `AllPrograms` 类型，以便测试按预期通过。
 
 请注意，仅使用 `keyof` 和 `typeof` 并采用与上一个练习解决方案类似的方法并不能完全解决这个问题！这很难找到——但作为一个提示：你可以将原始类型传递给索引访问类型。
-
-\<Exercise title="练习 6：从 `as const` 数组创建联合类型" filePath="/src/040-deriving-types-from-values/138-create-a-union-from-an-as-const-array.problem.ts" resourceId="AhnoaCs5v1qlRT7GjJoi5Y"\>\</Exercise\>
 
 ### 解决方案 1：减少键的重复
 
@@ -1053,8 +1041,6 @@ type MakeQueryParameters = [
 
 你的任务是使用一个工具类型来解决这个问题。
 
-\<Exercise title="练习 7：单一事实来源" filePath="/src/040-deriving-types-from-values/132-parameters-type-helper.problem.ts" resourceId="YgFRxBViy44CfW0H6uOO1f"\>\</Exercise\>
-
 ### 练习 8：基于返回值的类型化
 
 假设我们正在使用来自第三方库的 `createUser` 函数：
@@ -1093,8 +1079,6 @@ type test = Expect<
 
 你的任务是更新 `User` 类型，以便测试按预期通过。
 
-\<Exercise title="练习 8：基于返回值的类型化" filePath="/src/040-deriving-types-from-values/133-return-type.problem.ts" resourceId="YgFRxBViy44CfW0H6uOPRx"\>\</Exercise\>
-
 ### 练习 9：解包 Promise
 
 这次来自第三方库的 `createUser` 函数是异步的：
@@ -1126,8 +1110,6 @@ type test = Expect<
 和以前一样，假设您无法访问 `WorkspaceUser` 函数的实现。
 
 您的任务是更新 `User` 类型，以便测试按预期通过。
-
-\<Exercise title="练习 9：解包 Promise" filePath="/src/040-deriving-types-from-values/134-awaited-type-helper.problem.ts" resourceId="AhnoaCs5v1qlRT7GjJofuY"\>\</Exercise\>
 
 ### 解决方案 7：单一事实来源
 

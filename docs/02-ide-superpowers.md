@@ -69,8 +69,6 @@ acceptsObj({
 
 练习使用自动完成快捷方式在调用 `acceptsObj` 时填充对象。
 
-<Exercise title="练习 1：自动完成" filePath="/src/016.5-ide-superpowers/044-manually-triggering-autocomplete.problem.ts"></Exercise>
-
 #### 解决方案 1：自动完成
 
 当你在对象内部按下 `Ctrl + Space` 时，你会看到基于 `MyObj` 类型的可能属性列表：
@@ -282,8 +280,6 @@ let element = document.getElementById(12);
 
 悬停如何帮助确定 `document.getElementById` 实际需要什么参数？另外，`element` 的类型是什么？
 
-<Exercise title="练习 1：悬停函数调用" filePath="/src/016.5-ide-superpowers/041-hovering-a-function-call.problem.ts"></Exercise>
-
 #### 解决方案 1：悬停函数调用
 
 首先，我们可以将鼠标悬停在红色波浪线错误本身上。在这种情况下，将鼠标悬停在 `12` 上，我们会得到以下错误消息：
@@ -362,8 +358,6 @@ const myFunction = (a: number, b: number) => {
 为了理解这个函数的作用，你必须阅读代码。
 
 为函数添加一些文档，以便当你将鼠标悬停在它上面时，可以阅读它功能的描述。
-
-<Exercise title="练习 1：为悬停添加文档" filePath="/src/016.5-ide-superpowers/042-adding-tsdoc-comments-for-hovers.problem.ts"></Exercise>
 
 #### 解决方案 1：为悬停添加文档
 
@@ -511,8 +505,6 @@ const func = () => {
 突出显示变量、行或整个代码块，然后按 `Command + .` 打开"快速修复"菜单。根据打开菜单时光标的位置，将有几个修改代码的选项。
 
 尝试不同的选项，看看它们如何影响示例函数。
-
-<Exercise title="练习 1：快速修复重构" filePath="/src/016.5-ide-superpowers/050-refactor.problem.ts"></Exercise>
 
 ### 解决方案 1：快速修复重构
 
