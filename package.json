@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "@shikijs/vitepress-twoslash": "^3.4.2",
+    "vitepress": "^1.6.3"
+  },
+  "dependencies": {
+    "@total-typescript/helpers": "^0.0.1",
+    "vitest": "^3.1.3"
+  }
+}

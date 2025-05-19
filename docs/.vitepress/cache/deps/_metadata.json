@@ -1,0 +1,37 @@
+{
+  "hash": "20062701",
+  "configHash": "799d6ac5",
+  "lockfileHash": "0aceb920",
+  "browserHash": "84f6f0ab",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "23f61ac8",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "a81f7b58",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "9f4e95e6",
+      "needsInterop": false
+    },
+    "@shikijs/vitepress-twoslash/client": {
+      "src": "../../../../node_modules/@shikijs/vitepress-twoslash/dist/client.mjs",
+      "file": "@shikijs_vitepress-twoslash_client.js",
+      "fileHash": "23d7a042",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-TGLERUJR": {
+      "file": "chunk-TGLERUJR.js"
+    }
+  }
+}
